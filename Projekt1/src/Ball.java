@@ -5,5 +5,6 @@ public class Ball {
 	
 	public void sizeUp() {
 		this.size++;
+		this.size++;
 	}
 }
