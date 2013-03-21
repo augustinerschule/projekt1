@@ -10,3 +10,4 @@ if(file_exists($page))
 	$page = ucfirst($page);
 	$page = new $page($page);
 }
+?>
