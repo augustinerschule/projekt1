@@ -9,8 +9,10 @@ class Main extends Page {
 			$this->loadTemplate("außenlogin.php","innen.php");
 		}
 		else {
-			$this->loadTemplate("außennedlogin.php");
+			$this->loadTemplate("login.html");
 		}
+		$this->update();
+		$this->show();
 	}
 	public function update() {
 		parent::update();
@@ -18,14 +20,16 @@ class Main extends Page {
 			//normale seite blabla
 		}
 		else {
-			if(isset($_POST["username"])&& isset($_POST["password"])){
-				$sql = "SELECT * FROM user WHERE username = {$_POST['username']} AND password = {$_POST['password']}";
+			$_POST["asd"] = "asd";
+			print_r($_POST);
+			if(isset($_POST["user"]) && isset($_POST["pwd"])){
+				echo "asd";
+				$sql = "SELECT * FROM users WHERE username = {$_POST['user']} AND password = {$_POST['pwd']}";
 				$result = $this->db->query($sql);
-				if(mysql_num_rows($result) == 1){
-					$result =  mysql_fetch_array($result);
+				//mysql_fetch_object($result);
 					$_SESSION["userid"] = $result["id"];
 					header("location:index.php");
-				}
+				
 			}
 		}
 	}	
