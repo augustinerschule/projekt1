@@ -6,31 +6,21 @@ class Main extends Page {
 	{
 		parent::__construct();
 		if (isset($_SESSION['userid'])){
-			$this->loadTemplate("außenlogin.php","innen.php");
+			$this->loadTemplate("außen.html","startseite.html");
 		}
 		else {
 			$this->loadTemplate("login.html");
 		}
-		$this->update();
-		$this->show();
 	}
 	public function update() {
 		parent::update();
-		if(isset($_SESSION['userid'])) {
-			//normale seite blabla
-		}
-		else {
-			$_POST["asd"] = "asd";
-			print_r($_POST);
+		if(!isset($_SESSION['userid'])) {
 			if(isset($_POST["user"]) && isset($_POST["pwd"])){
-				echo "asd";
-				$sql = "SELECT * FROM users WHERE username = {$_POST['user']} AND password = {$_POST['pwd']}";
-				$result = $this->db->query($sql);
-				//mysql_fetch_object($result);
-					$_SESSION["userid"] = $result["id"];
-					header("location:index.php");
-				
-			}
+				$sql = "SELECT * FROM users WHERE username = '".$_POST['user']."' AND password = '".$_POST['pwd']."'";
+				$result = $this->db->query($sql)->fetch_assoc();
+				$_SESSION["userid"] = $result["ID"];
+				header("location:index.php");
+			} 
 		}
 	}	
 }

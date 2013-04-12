@@ -6,7 +6,6 @@ class Page {
 	
 	public function __construct()
 	{
-		session_start();
 		$this->db = new mysqli('localhost', 'root', '', 'yolomcswaggster');		
 	}
 	
