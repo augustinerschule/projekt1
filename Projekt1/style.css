@@ -1,0 +1,33 @@
+body {
+  text-align: center;
+}
+
+#content {
+  height: 600px;
+  width: 1000px;
+  border: 1px solid #123123;
+  margin: 0 auto;
+}
+
+#navbar {
+  height: 50px;
+  width: 1000px;
+  border: 1px solid #123123;
+  margin: 0 auto;
+}
+
+#l_staedte {
+	width: 15%;
+	float: left;
+	text-align: left;
+	border: 1px solid red;
+	
+}
+
+#l_staedte ul {
+	list-style: none;
+}
+
+#l_gebaeude td,#l_gebaeude th,#l_gebaeude table{
+	border: 1px solid black;
+}
