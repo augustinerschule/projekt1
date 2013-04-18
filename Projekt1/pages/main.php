@@ -36,8 +36,8 @@ class Main extends Page {
 			foreach ($this->stadt->buildings as $building)
 			{
 				$str .= "<tr><td>".($building->typ < 100 ? Constants::$buildings[$building->typ] : Constants::$resources[$building->typ-100]."-Harvester").
-							" (Stufe ".$building->level.")</td><td>asdasd</td><td><form method='post'><input type='hidden' name='typ' value='".$building->typ."'>
-							<input type='hidden' name='level' value='".($building->level+1)."'><button type='submit' name='build'>Upgrade</button></form></td></tr>";
+							" (Stufe ".$building->level.")</td><td>asdasd</td><td><div class='upgrade'><form method='post'><input type='hidden' name='typ' value='".$building->typ."'>
+							<input type='hidden' name='level' value='".($building->level+1)."'><button type='submit' name='build'>Upgrade</button></form></div></td></tr>";
 			}
 			$this->set("%TEXT%", $str);
 		}

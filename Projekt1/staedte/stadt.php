@@ -41,7 +41,7 @@ class Stadt {
 		for($i = 0;$i < count(Constants::$resources);$i++)		
 			$this->buildings[100+$i] = Building::getBuilding(100+$i,0,$this->stadtid);
 		
-		$res = $this->db->query("SELECT * FROM gebaeude WHERE id = '".$this->stadtid."'");		
+		$res = $this->db->query("SELECT * FROM `gebaeude` WHERE `stadtid` = '".$this->stadtid."'");		
 		while($row = $res->fetch_assoc())		
 			$this->buildings[$row["typ"]] = Building::getBuilding($row["typ"],$row["stufe"],$this->stadtid);
 			

@@ -32,6 +32,16 @@ body {
 	border: 1px solid black;
 }
 
+.upgrade button{
+	/*border: none;
+	background: transparent;*/
+	cursor: pointer;
+}
+
+.upgrade {
+
+}
+
 #date {
 	float: right;
 }
