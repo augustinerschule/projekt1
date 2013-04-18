@@ -20,7 +20,7 @@ body {
 	width: 15%;
 	float: left;
 	text-align: left;
-	border: 1px solid red;
+	border: 1px solid black;
 	
 }
 
@@ -30,4 +30,12 @@ body {
 
 #l_gebaeude td,#l_gebaeude th,#l_gebaeude table{
 	border: 1px solid black;
+}
+
+#date {
+	float: right;
+}
+
+#resources {
+	float: left;
 }

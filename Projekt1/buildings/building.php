@@ -32,5 +32,12 @@ abstract class Building {
 			//return new Constants::$buildings[$typ]($stufe, $stadtid, $typ);
 		}
 	}
+	
+	public static function buildBuilding($db,$stadtid,$typ,$stufe) {
+		if ($db->query("SELECT * FROM `gebaeude` WHERE `stadtid`='".$stadtid."' AND `typ`='".$typ."'")->num_rows == 0)
+			$db->query("INSERT INTO `gebaeude` (`id` ,`stadtid` ,`typ` ,`stufe` ) VALUES (NULL , '".$stadtid."', '".$typ."', '1')");
+		else
+			$db->query("UPDATE `gebaeude` SET `stufe`='".$stufe."' WHERE `stadtid`='".$stadtid."' AND `typ`='".$typ."'");
+	}
 }
 ?>

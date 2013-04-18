@@ -5,7 +5,6 @@ class Stadt {
 	public $resources = array();
 	public $currentlyBuilding = array();
 	public $owner;
-	public $name;
 	public $stadtid;
 	public $lastUpdate;
 	
@@ -15,7 +14,6 @@ class Stadt {
 	{
 		$this->db = $d;
 		$this->stadtid = $stadtid;
-		$this->name = $this->db->query("SELECT * FROM staedte WHERE id = '".$this->stadtid."'")->fetch_assoc()["name"];
 		$this->getResourcesFromDB();
 		$this->getBuildingsFromDB();
 	}
