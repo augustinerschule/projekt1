@@ -17,14 +17,14 @@ class Viewharvester extends Page{
 		
 		$str = "<h2>".(ucfirst(Constants::$resources[$this->typ - 100]))."harvester Stufe ".$this->stadt->buildings[$this->typ]->level."</h2>Upgradekosten:<table><tr>";
 		
-		foreach(Constants::$resources as $res);
-			$str .= "<th>$res</th>";
+		for($res = 0;$res <= 2; $res++)
+			$str .= "<th>".ucfirst(Constants::$resources[$res])."</th>";
 		
 		$resources = $this->stadt->buildings[$this->typ]->getResourcesForLevel($this->stadt->buildings[$this->typ]->level+1);
 		
 		$str .="</tr><tr>";
-		foreach($resources as $res);
-			$str .= "<td>$res</td>";
+		for($res = 0;$res <= 2; $res++)
+			$str .= "<td>".$resources[Constants::$resources[$res]]."</td>";
 			
 		$this->set("%TEXT%",$str."</tr></table>");
 	}

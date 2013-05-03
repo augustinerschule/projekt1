@@ -18,6 +18,7 @@ body {
 
 #l_staedte {
 	width: 15%;
+	height: 100%;
 	float: left;
 	text-align: left;
 	border: 1px solid black;
@@ -34,6 +35,14 @@ body {
 
 #schule td,#schule th,#schule table{
 	border: 1px solid black;
+}
+
+#harvester td,#harvester th,#harvester table{
+	border: 1px solid black;
+}
+
+#harvester table{
+	margin: 0 auto;
 }
 
 .upgrade button{
