@@ -32,6 +32,10 @@ body {
 	border: 1px solid black;
 }
 
+#schule td,#schule th,#schule table{
+	border: 1px solid black;
+}
+
 .upgrade button{
 	/*border: none;
 	background: transparent;*/

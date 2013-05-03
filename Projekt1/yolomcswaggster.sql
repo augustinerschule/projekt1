@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 17. Apr 2013 um 15:27
+-- Erstellungszeit: 26. Apr 2013 um 13:54
 -- Server Version: 5.5.27
 -- PHP-Version: 5.4.7
 
@@ -23,6 +23,48 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `bauauftraege`
+--
+
+CREATE TABLE IF NOT EXISTS `bauauftraege` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `stadtid` int(11) NOT NULL,
+  `fertigum` int(11) NOT NULL,
+  `typ` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `forschauftraege`
+--
+
+CREATE TABLE IF NOT EXISTS `forschauftraege` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `stadtid` int(11) NOT NULL,
+  `fertigum` int(11) NOT NULL,
+  `typ` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `forschung`
+--
+
+CREATE TABLE IF NOT EXISTS `forschung` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  `typ` int(11) NOT NULL,
+  `stufe` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `gebaeude`
 --
 
@@ -32,14 +74,21 @@ CREATE TABLE IF NOT EXISTS `gebaeude` (
   `typ` int(11) NOT NULL,
   `stufe` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Daten für Tabelle `gebaeude`
 --
 
 INSERT INTO `gebaeude` (`id`, `stadtid`, `typ`, `stufe`) VALUES
-(1, 1, 100, 1);
+(16, 1, 104, 3),
+(17, 1, 103, 1),
+(18, 1, 102, 2),
+(19, 2, 104, 1),
+(20, 1, 101, 2),
+(21, 1, 0, 3),
+(22, 2, 0, 2),
+(23, 1, 100, 3);
 
 -- --------------------------------------------------------
 
@@ -65,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `staedte` (
 --
 
 INSERT INTO `staedte` (`id`, `userid`, `name`, `holz`, `gold`, `nahrung`, `stein`, `einwohner`, `lastupdate`) VALUES
-(1, 1, 'asd', 9825, 100, 100, 100, 10, 1366205217),
-(2, 1, 'asdf', 20, 20, 20, 20, 20, 1366205215);
+(1, 1, 'asd', 200000, 200000, 185385, 200000, 200000, 1366977249),
+(2, 1, 'asdf', 0, 0, 0, 0, 150000, 1366977038);
 
 -- --------------------------------------------------------
 
@@ -79,15 +128,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(30) NOT NULL,
   `passwort` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Daten für Tabelle `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `passwort`) VALUES
-(1, 'asd', 'asd'),
-(2, 'asdasd', 'asd');
+(1, 'asd', 'asd');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
