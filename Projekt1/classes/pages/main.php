@@ -13,9 +13,12 @@ class Main extends Page {
 			$this->loadTemplate("./templates/login.html");
 		}
 	}
+	
 	public function update() {
 		if(!isset($_SESSION['userid'])) {
 			if(isset($_POST["user"]) && isset($_POST["pwd"])){
+				$_POST['user']= $this->db->real_escape_string($_POST['user']);
+				$_POST['pwd']= $this->db->real_escape_string($_POST['pwd']);
 				$sql = "SELECT * FROM users WHERE username = '".$_POST['user']."' AND passwort = '".$_POST['pwd']."'";
 				$result = $this->db->query($sql)->fetch_assoc();
 				$_SESSION["userid"] = $result["id"];
